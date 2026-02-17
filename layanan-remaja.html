@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelayanan Remaja - Gereja Oraet Labora Malawa</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- CSS External -->
+    <link rel="stylesheet" href="assets/footer.css">
+    <link rel="stylesheet" href="assets/layanan-remaja.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* WARNA CUSTOM -->
+        .bg-brown-milk {
+            background: linear-gradient(to right, #8B6F47, #A0826D, #B8956A);
+        }
+
+        .bg-brown-light {
+            background-color: #F5E6D3;
+        }
+
+        .text-brown-medium {
+            color: #8B6F47;
+        }
+
+        .text-brown-dark {
+            color: #5C4A33;
+        }
+
+        /* ANIMASI */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 1s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-brown-light overflow-x-hidden">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="bg-gradient-to-r from-amber-700 via-amber-600 to-amber-700 shadow-lg sticky top-0 z-50" style="background: linear-gradient(to right, #8B6F47, #A0826D, #B8956A);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- LOGO -->
+                <div class="text-lg sm:text-xl font-bold text-white flex items-center gap-2 group flex-shrink-0">
+                    <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-md">
+                        <span style="color: #5C4A33;" class="text-xl">⛪</span>
+                    </div>
+                    <span class="hover:text-amber-200 transition-colors duration-300 hidden sm:inline">Gereja Oraet Laboara Malawa</span>
+                    <span class="hover:text-amber-200 transition-colors duration-300 sm:hidden">GOLM</span>
+                </div>
+
+                <!-- MENU DESKTOP -->
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-medium ml-8">
+                    <a href="index.html" class="px-3 lg:px-4 py-2 text-white rounded-lg transition-all duration-300 shadow-sm hover:bg-black hover:bg-opacity-20">Beranda</a>
+                    <a href="profil.html" class="px-3 lg:px-4 py-2 text-white rounded-lg transition-all duration-300 shadow-sm hover:bg-black hover:bg-opacity-20">Profil</a>
+
+                    <!-- DROPDOWN PELAYANAN -->
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 px-3 lg:px-4 py-2 text-white rounded-lg transition-all duration-300 shadow-sm hover:bg-black hover:bg-opacity-20">
+                            Pelayanan
+                            <svg class="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-52 bg-amber-50 shadow-2xl rounded-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border-2" style="border-color: #8B6F47;">
+                            <a href="pelayanan.html#sekolah-minggu" class="block px-4 py-3 text-brown-medium font-medium border-l-4 border-transparent hover:bg-yellow-200 transition-all">Sekolah Minggu</a>
+                            <a href="pelayanan.html#remaja" class="block px-4 py-3 text-brown-medium font-medium border-l-4 border-amber-500 bg-yellow-50 transition-all">Remaja</a>
+                            <a href="pelayanan.html#pemuda" class="block px-4 py-3 text-brown-medium font-medium border-l-4 border-transparent hover:bg-yellow-200 transition-all">Pemuda</a>
+                            <a href="pelayanan.html#diakonia" class="block px-4 py-3 text-brown-medium font-medium border-l-4 border-transparent hover:bg-yellow-200 transition-all">Diakonia</a>
+                        </div>
+                    </div>
+
+                    <a href="jadwal.html" class="px-3 lg:px-4 py-2 text-white rounded-lg transition-all duration-300 shadow-sm hover:bg-black hover:bg-opacity-20">Jadwal</a>
+                    <a href="kontak.html" class="px-3 lg:px-4 py-2 bg-amber-500 text-white hover:bg-amber-600 rounded-lg transition-all duration-300 font-semibold shadow-lg">Kontak</a>
+                </div>
+
+                <!-- MOBILE BUTTON -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="transform hover:scale-110 transition-transform duration-300" style="display: flex; flex-direction: column; cursor: pointer; padding: 4px;">
+                        <span style="width: 28px; height: 3px; background-color: white; display: block; margin: 5px 0; transition: all 0.3s ease-in-out; border-radius: 2px;"></span>
+                        <span style="width: 28px; height: 3px; background-color: white; display: block; margin: 5px 0; transition: all 0.3s ease-in-out; border-radius: 2px;"></span>
+                        <span style="width: 28px; height: 3px; background-color: white; display: block; margin: 5px 0; transition: all 0.3s ease-in-out; border-radius: 2px;"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MENU MOBILE -->
+        <div id="menu" class="hidden md:hidden" style="background: linear-gradient(to bottom, #7D6444, #6B5639);">
+            <a href="index.html" class="block px-6 py-3 text-white hover:bg-yellow-700 border-l-4 border-transparent">Beranda</a>
+            <a href="profil.html" class="block px-6 py-3 text-white hover:bg-yellow-700 border-l-4 border-transparent">Profil</a>
+
+            <button id="drop-btn" class="w-full text-left px-6 py-3 text-white hover:bg-yellow-700 flex justify-between items-center">
+                <span>Pelayanan</span>
+                <svg id="drop-icon" class="w-5 h-5 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </button>
+
+            <div id="drop-menu" class="hidden" style="background-color: #6B5639;">
+                <a href="pelayanan.html#sekolah-minggu" class="block pl-10 py-3 text-amber-100 hover:bg-yellow-700">Sekolah Minggu</a>
+                <a href="pelayanan.html#remaja" class="block pl-10 py-3 text-amber-100 bg-yellow-800">Remaja</a>
+                <a href="pelayanan.html#pemuda" class="block pl-10 py-3 text-amber-100 hover:bg-yellow-700">Pemuda</a>
+                <a href="pelayanan.html#diakonia" class="block pl-10 py-3 text-amber-100 hover:bg-yellow-700">Diakonia</a>
+            </div>
+
+            <a href="jadwal.html" class="block px-6 py-3 text-white hover:bg-yellow-700">Jadwal</a>
+            <a href="kontak.html" class="block px-6 py-3 bg-amber-500 text-white font-semibold mx-4 my-2 rounded-lg text-center shadow-lg">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero-remaja flex items-center justify-center min-h-screen" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('images/bacground1.jpg') center/cover no-repeat;">
+        <div class="max-w-6xl mx-auto px-6 text-white text-center animate-fade-up">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                Pelayanan <span class="text-amber-400">Remaja</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-xl text-amber-100 mb-4">
+                Tempat remaja tumbuh, belajar, dan melayani dengan sepenuh hati untuk Tuhan dan sesama
+            </p>
+            <small class="block text-lg italic opacity-90">— 1 Timotius 4:12</small>
+        </div>
+    </section>
+
+    <!-- ================= TENTANG PELAYANAN REMAJA ================= -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-brown-medium mb-4">
+                    <i class="fa-solid fa-hands-praying mr-3"></i>
+                    Tentang Pelayanan Remaja
+                </h2>
+                <div class="h-1 w-20 bg-amber-500 mx-auto rounded-full mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-700 text-lg">
+                    Program khusus untuk membimbing remaja menjalani masa transisi dengan iman yang kuat
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div class="flex items-start gap-4 animate-fade-up">
+                    <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-md bg-amber-500 text-white">
+                        <i class="fa-solid fa-heart text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-brown-medium mb-2">Visi Kami</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Membina remaja yang matang dalam iman Kristus, memiliki karakter yang kuat, dan menjadi agen perubahan positif di masyarakat dengan penuh integritas dan kasih.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-4 animate-fade-up">
+                    <div class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-md bg-amber-500 text-white">
+                        <i class="fa-solid fa-target text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-brown-medium mb-2">Misi Kami</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Menyediakan wadah pendalaman iman, membangun komunitas yang suportif, mengembangkan kepemimpinan, dan memberdayakan remaja untuk melayani dengan sepenuh hati.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROGRAM UTAMA ================= -->
+    <section class="py-16 md:py-24 bg-gradient-to-b from-white to-amber-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-brown-medium mb-4">
+                    <i class="fa-solid fa-calendar-days mr-3"></i>
+                    Program Utama
+                </h2>
+                <div class="h-1 w-20 bg-amber-500 mx-auto rounded-full mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-700 text-lg">
+                    Berbagai program bermutu untuk pengembangan holistik remaja
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- KEBAKTIAN REMAJA -->
+                <div class="program-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover-lift animate-fade-up">
+                    <div class="mb-4">
+                        <i class="fa-solid fa-music text-5xl text-amber-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brown-medium mb-3">Kebaktian Remaja</h3>
+                    <div class="space-y-3 text-gray-700 mb-4">
+                        <p><strong>Waktu:</strong> Minggu, 17:00 WIB</p>
+                        <p><strong>Tempat:</strong> Ruang Remaja Gereja</p>
+                        <p><strong>Target:</strong> Umur 13-17 tahun</p>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Ibadah interaktif dengan worship modern, pesan yang relevan dengan kehidupan remaja, dan persekutuan yang hangat untuk memperkuat iman mereka.
+                    </p>
+                </div>
+
+                <!-- CELL GROUP / PA -->
+                <div class="program-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover-lift animate-fade-up">
+                    <div class="mb-4">
+                        <i class="fa-solid fa-book text-5xl text-amber-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brown-medium mb-3">Cell Group / PA</h3>
+                    <div class="space-y-3 text-gray-700 mb-4">
+                        <p><strong>Waktu:</strong> 1x per minggu</p>
+                        <p><strong>Bentuk:</strong> Kelompok kecil (5-8 orang)</p>
+                        <p><strong>Pemimpin:</strong> Mentor berpengalaman</p>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Pertemuan intim untuk pendalaman Alkitab, doa bersama, berbagi pengalaman, dan saling mendukung dalam perjalanan iman.
+                    </p>
+                </div>
+
+                <!-- MENTORING -->
+                <div class="program-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover-lift animate-fade-up">
+                    <div class="mb-4">
+                        <i class="fa-solid fa-lightbulb text-5xl text-amber-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brown-medium mb-3">Mentoring Personal</h3>
+                    <div class="space-y-3 text-gray-700 mb-4">
+                        <p><strong>Jadwal:</strong> Fleksibel sesuai kebutuhan</p>
+                        <p><strong>Format:</strong> One-on-one dengan mentor</p>
+                        <p><strong>Durasi:</strong> 1 jam per session</p>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Bimbingan individual untuk mendiskusikan tantangan hidup, pertumbuhan rohani, dan menemukan panggilan Tuhan dalam hidup remaja.
+                    </p>
+                </div>
+
+                <!-- SEMINAR & RETREAT -->
+                <div class="program-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover-lift animate-fade-up">
+                    <div class="mb-4">
+                        <i class="fa-solid fa-campground text-5xl text-amber-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brown-medium mb-3">Seminar & Retreat</h3>
+                    <div class="space-y-3 text-gray-700 mb-4">
+                        <p><strong>Frekuensi:</strong> 2x setahun</p>
+                        <p><strong>Durasi:</strong> 2-3 hari</p>
+                        <p><strong>Fokus:</strong> Pendalaman iman mendalam</p>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Program intensif untuk pendalaman iman, persahabatan yang lebih dalam, dan petualangan spiritual yang berkesan bersama komunitas remaja.
+                    </p>
+                </div>
+
+                <!-- BAKTI SOSIAL -->
+                <div class="program-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover-lift animate-fade-up">
+                    <div class="mb-4">
+                        <i class="fa-solid fa-hand-holding-heart text-5xl text-amber-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brown-medium mb-3">Bakti Sosial</h3>
+                    <div class="space-y-3 text-gray-700 mb-4">
+                        <p><strong>Frekuensi:</strong> Berkala setiap bulan</p>
+                        <p><strong>Bentuk:</strong> Berbagai kegiatan sosial</p>
+                        <p><strong>Target:</strong> Masyarakat sekitar</p>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Kegiatan pelayanan sosial seperti mengunjungi panti jompo, membantu yang membutuhkan, dan menunjukkan kasih Kristus melalui tindakan nyata.
+                    </p>
+                </div>
+
+                <!-- OUTING & GAMES -->
+                <div class="program-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500 hover-lift animate-fade-up">
+                    <div class="mb-4">
+                        <i class="fa-solid fa-mountain-sun text-5xl text-amber-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brown-medium mb-3">Outing & Games</h3>
+                    <div class="space-y-3 text-gray-700 mb-4">
+                        <p><strong>Frekuensi:</strong> Regular setiap bulan</p>
+                        <p><strong>Aktivitas:</strong> Outdoor & indoor games</p>
+                        <p><strong>Manfaat:</strong> Fun & persahabatan</p>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Kegiatan seru dan menyenangkan untuk mempererat persahabatan, menciptakan kenangan indah, dan membangun ikatan yang kuat antar remaja.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PEMBIMBING & MENTOR ================= -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-brown-medium mb-4">
+                    <i class="fa-solid fa-people-group mr-3"></i>
+                    Pembimbing & Mentor
+                </h2>
+                <div class="h-1 w-20 bg-amber-500 mx-auto rounded-full mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-700 text-lg">
+                    Tim berpengalaman yang peduli dan siap membimbing remaja
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="mentor-card bg-gradient-to-b from-amber-50 to-white p-6 rounded-xl shadow text-center hover-mentor">
+                    <div class="w-20 h-20 bg-amber-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i class="fa-solid fa-user-tie text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brown-medium mb-2">Pendeta Muda</h4>
+                    <p class="text-sm text-gray-600">Pemimpin rohani utama dan pembimbing spiritual remaja</p>
+                </div>
+
+                <div class="mentor-card bg-gradient-to-b from-amber-50 to-white p-6 rounded-xl shadow text-center hover-mentor">
+                    <div class="w-20 h-20 bg-amber-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i class="fa-solid fa-heart text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brown-medium mb-2">Mentor Rohani</h4>
+                    <p class="text-sm text-gray-600">Mentor berpengalaman untuk pembimbing group dan mentoring</p>
+                </div>
+
+                <div class="mentor-card bg-gradient-to-b from-amber-50 to-white p-6 rounded-xl shadow text-center hover-mentor">
+                    <div class="w-20 h-20 bg-amber-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i class="fa-solid fa-person-hiking text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brown-medium mb-2">Kakak Pembina</h4>
+                    <p class="text-sm text-gray-600">Remaja lebih tua yang menjadi contoh dan pembina</p>
+                </div>
+
+                <div class="mentor-card bg-gradient-to-b from-amber-50 to-white p-6 rounded-xl shadow text-center hover-mentor">
+                    <div class="w-20 h-20 bg-amber-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <i class="fa-solid fa-users text-white text-3xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-brown-medium mb-2">Tim Suportif</h4>
+                    <p class="text-sm text-gray-600">Orang tua dan anggota gereja yang mendukung</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= KEUNTUNGAN BERGABUNG ================= -->
+    <section class="py-16 md:py-24 bg-brown-light">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold text-brown-medium mb-4">
+                    <i class="fa-solid fa-star mr-3"></i>
+                    Keuntungan Bergabung
+                </h2>
+                <div class="h-1 w-20 bg-amber-500 mx-auto rounded-full mb-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="benefit-item flex gap-4 animate-fade-up">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-amber-500 text-white">
+                            <i class="fa-solid fa-check text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-brown-medium mb-1">Pertumbuhan Spiritual</h4>
+                        <p class="text-gray-700">Belajar dan tumbuh dalam iman Kristus melalui program yang terstruktur dan berkualitas</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item flex gap-4 animate-fade-up">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-amber-500 text-white">
+                            <i class="fa-solid fa-check text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-brown-medium mb-1">Persahabatan Sejati</h4>
+                        <p class="text-gray-700">Bertemu dengan remaja yang memiliki visi dan passion yang sama dalam mengikuti Tuhan</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item flex gap-4 animate-fade-up">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-amber-500 text-white">
+                            <i class="fa-solid fa-check text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-brown-medium mb-1">Mentoring & Bimbingan</h4>
+                        <p class="text-gray-700">Didampingi mentor berpengalaman yang siap membantu menghadapi tantangan hidup</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item flex gap-4 animate-fade-up">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-amber-500 text-white">
+                            <i class="fa-solid fa-check text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-brown-medium mb-1">Wadah Pelayanan</h4>
+                        <p class="text-gray-700">Kesempatan untuk melayani sesama dan membuat dampak positif di masyarakat</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item flex gap-4 animate-fade-up">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-amber-500 text-white">
+                            <i class="fa-solid fa-check text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-brown-medium mb-1">Pengembangan Diri</h4>
+                        <p class="text-gray-700">Program development untuk mengembangkan kepemimpinan dan potensi diri remaja</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item flex gap-4 animate-fade-up">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-amber-500 text-white">
+                            <i class="fa-solid fa-check text-2xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-brown-medium mb-1">Komunitas Suportif</h4>
+                        <p class="text-gray-700">Memiliki keluarga besar yang saling mendukung dalam setiap proses dan tantangan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CALL TO ACTION ================= -->
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-up">
+            <div class="bg-gradient-to-r from-amber-500 to-amber-600 rounded-2xl shadow-xl p-8 md:p-12 text-white">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    <i class="fa-solid fa-rocket mr-2"></i>
+                    Siap Bergabung?
+                </h2>
+                <p class="text-lg md:text-xl mb-8 opacity-95">
+                    Jangan ragu untuk menjadi bagian dari komunitas remaja yang luar biasa! Mari tumbuh bersama dalam iman dan pelayanan.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="kontak.html" class="inline-flex items-center justify-center gap-2 bg-white text-amber-700 px-8 py-3 rounded-lg font-bold shadow-lg hover:bg-gray-100 transition-all">
+                        <i class="fa-solid fa-envelope"></i>
+                        Hubungi Kami
+                    </a>
+                    <a href="index.html" class="inline-flex items-center justify-center gap-2 bg-amber-700 text-white px-8 py-3 rounded-lg font-bold shadow-lg hover:bg-amber-800 border border-white transition-all">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Kembali Ke Beranda
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="text-amber-100" style="background-color: #735432;">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <div class="grid md:grid-cols-3 gap-6 text-center md:text-left">
+                <!-- LOGO & NAMA -->
+                <div class="flex flex-col items-center md:items-start">
+                    <svg class="w-10 h-10 mb-2 text-amber-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20M5 9h14" />
+                    </svg>
+                    <h2 class="text-base font-bold text-amber-50">Gereja Oraet Laboara Malawa</h2>
+                    <p class="text-sm mt-1">Tempat bertumbuh dalam iman dan kasih</p>
+                </div>
+
+                <!-- MENU -->
+                <div>
+                    <h3 class="text-amber-50 font-semibold mb-2">Menu</h3>
+                    <ul class="space-y-1 text-sm">
+                        <li><a href="index.html" class="hover:text-amber-300">Beranda</a></li>
+                        <li><a href="profil.html" class="hover:text-amber-300">Profil</a></li>
+                        <li><a href="pelayanan.html#remaja" class="hover:text-amber-300">Pelayanan Remaja</a></li>
+                        <li><a href="kontak.html" class="hover:text-amber-300">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <!-- KONTAK -->
+                <div>
+                    <h3 class="text-amber-50 font-semibold mb-2">Kontak</h3>
+                    <p class="text-sm leading-relaxed">
+                        Desa Malawa<br>
+                        08xxxxxxxxxx<br>
+                        gereja@oraelmalawa.org
+                    </p>
+                </div>
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="border-t mt-6 pt-3 text-center text-sm" style="border-color: #b8956a;">
+                © 2026 Gereja Orael Laboara Malawa
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT - Hamburger & Dropdown Menu -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        const dropBtn = document.getElementById('drop-btn');
+        const dropMenu = document.getElementById('drop-menu');
+        const dropIcon = document.getElementById('drop-icon');
+
+        if (menuBtn && menu) {
+            menuBtn.onclick = () => {
+                menu.classList.toggle('hidden');
+                menuBtn.classList.toggle('active');
+            };
+        }
+
+        if (dropBtn && dropMenu) {
+            dropBtn.onclick = () => {
+                dropMenu.classList.toggle('hidden');
+                dropIcon.classList.toggle('rotate-180');
+            };
+        }
+    </script>
+
+</body>
+
+</html>

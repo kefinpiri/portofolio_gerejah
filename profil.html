@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Gereja - Gereja Oraet Labora Malawa</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="assets/footer.css">
+    <!-- Animasi Ringan -->
+    <style>
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 1s ease-out forwards;
+        }
+
+        /* ===== WARNA CUSTOM ===== */
+        .bg-brown-milk {
+            background: linear-gradient(to right, #8B6F47, #A0826D, #B8956A);
+        }
+
+        .bg-brown-milk-dark {
+            background: linear-gradient(to bottom, #7D6444, #6B5639);
+        }
+
+        .bg-brown-light {
+            background-color: #F5E6D3;
+        }
+
+        .text-brown-dark {
+            color: #5C4A33;
+        }
+
+        .text-brown-medium {
+            color: #8B6F47;
+        }
+
+        .border-brown {
+            border-color: #8B6F47;
+        }
+
+        /* ===== HOVER EFFECTS ===== */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 111, 71, 0.2);
+        }
+
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+
+        .btn-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(139, 111, 71, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-brown-light overflow-x-hidden">
+
+    <!-- ================= NAVBAR ================= -->
+    <div id="navbar" class="sticky top-0 z-50"></div>
+
+    <!-- ================= HERO PROFIL ================= -->
+    <!-- =============== END HERO ================= -->
+
+    <!-- ================= SEJARAH ================= -->
+    <section id="sejarah-section" class="py-16 md:py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-up">
+
+            <!-- HEADING -->
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-brown-medium mb-2 md:mb-4">
+                    <i class="fa-solid fa-book-bible mr-2 md:mr-3"></i>
+                    Sejarah Gereja
+                </h2>
+                <div class="h-1 w-16 bg-amber-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- CONTENT CARDS -->
+            <div class="grid grid-cols-1 gap-6 md:gap-8">
+
+                <!-- CARD 1 - PENDIRIAN -->
+                <div class="card-hover bg-gradient-to-br from-white to-amber-50 p-6 md:p-8 rounded-xl shadow-md border-l-4 border-amber-500">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <i class="fa-solid fa-cross text-amber-600 text-3xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl md:text-2xl font-bold text-brown-medium mb-3">Pendirian & Tujuan</h3>
+                            <p class="text-gray-700 leading-relaxed text-sm md:text-base font-medium">
+                                Gereja Oraet Labora Malawa didirikan sebagai wadah persekutuan umat Tuhan untuk beribadah, bertumbuh dalam iman, dan melayani sesama dengan penuh dedikasi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 - PERTUMBUHAN -->
+                <div class="card-hover bg-gradient-to-br from-white to-amber-50 p-6 md:p-8 rounded-xl shadow-md border-l-4 border-amber-500">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <i class="fa-solid fa-arrow-trend-up text-amber-600 text-3xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl md:text-2xl font-bold text-brown-medium mb-3">Pertumbuhan Komunitas</h3>
+                            <p class="text-gray-700 leading-relaxed text-sm md:text-base font-medium">
+                                Gereja terus berkembang sebagai komunitas yang hidup dalam Firman Tuhan dan kasih Kristus, menjadi tempat di mana jemaat dapat bertumbuh secara rohani dan berbagi pengalaman iman.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 - PELAYANAN -->
+                <div class="card-hover bg-gradient-to-br from-white to-amber-50 p-6 md:p-8 rounded-xl shadow-md border-l-4 border-amber-500">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <i class="fa-solid fa-hands-helping text-amber-600 text-3xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl md:text-2xl font-bold text-brown-medium mb-3">Jangkauan Pelayanan</h3>
+                            <p class="text-gray-700 leading-relaxed text-sm md:text-base font-medium">
+                                Pelayanan gereja mencakup seluruh lapisan jemaat, mulai dari anak-anak melalui Sekolah Minggu, remaja, pemuda, keluarga, hingga program diakonia sosial yang menjangkau komunitas luas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA BUTTON -->
+            <div class="mt-10 md:mt-14 text-center">
+                <button id="btn-scroll-hero" class="btn-hover inline-block bg-brown-milk text-white px-6 md:px-8 py-2.5 md:py-3 rounded-lg font-semibold text-sm md:text-base shadow-lg cursor-pointer">
+                    <i class="fa-solid fa-arrow-up mr-2"></i>
+                    Kembali ke Atas
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= VISI & MISI ================= -->
+    <section id="visi-misi-section" class="py-20 bg-brown-light">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+
+            <!-- VISI -->
+            <div class="bg-white p-8 rounded-xl shadow-lg animate-fade-up border-t-4 border-amber-500">
+                <h3 class="text-2xl font-bold text-brown-medium mb-4">
+                    <i class="fa-solid fa-eye mr-2"></i>
+                    Visi Gereja
+                </h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Menjadi gereja yang dewasa secara rohani, teguh dalam iman,
+                    dan berdampak bagi dunia melalui kasih Kristus.
+                </p>
+            </div>
+
+            <!-- MISI -->
+            <div class="bg-white p-8 rounded-xl shadow-lg animate-fade-up border-t-4 border-amber-500">
+                <h3 class="text-2xl font-bold text-brown-medium mb-4">
+                    <i class="fa-solid fa-bullseye mr-2"></i>
+                    Misi Gereja
+                </h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Memberitakan Firman Tuhan secara setia</li>
+                    <li>Membina pertumbuhan iman jemaat</li>
+                    <li>Mengembangkan pelayanan bagi semua generasi</li>
+                    <li>Melayani dengan kasih dan kepedulian</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= NILAI GEREJA ================= -->
+    <section id="nilai-section" class="py-20 bg-brown-light">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+
+            <h2 class="text-3xl font-bold text-brown-medium mb-10 animate-fade-up">
+                Nilai-Nilai Pelayanan
+            </h2>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <div class="p-6 rounded-xl shadow-lg animate-fade-up bg-white border-l-4 border-amber-500">
+                    <i class="fa-solid fa-cross text-3xl text-amber-600 mb-3"></i>
+                    <h4 class="font-bold text-lg text-brown-dark mb-2">Iman</h4>
+                    <p class="text-gray-600">Hidup berlandaskan Firman Tuhan.</p>
+                </div>
+
+                <div class="p-6 rounded-xl shadow-lg animate-fade-up bg-white border-l-4 border-amber-500">
+                    <i class="fa-solid fa-heart text-3xl text-amber-600 mb-3"></i>
+                    <h4 class="font-bold text-lg text-brown-dark mb-2">Kasih</h4>
+                    <p class="text-gray-600">Melayani dengan hati yang tulus.</p>
+                </div>
+
+                <div class="p-6 rounded-xl shadow-lg animate-fade-up bg-white border-l-4 border-amber-500">
+                    <i class="fa-solid fa-hands-helping text-3xl text-amber-600 mb-3"></i>
+                    <h4 class="font-bold text-lg text-brown-dark mb-2">Pelayanan</h4>
+                    <p class="text-gray-600">Siap melayani Tuhan dan sesama.</p>
+                </div>
+
+                <div class="p-6 rounded-xl shadow-lg animate-fade-up bg-white border-l-4 border-amber-500">
+                    <i class="fa-solid fa-shield-heart text-3xl text-amber-600 mb-3"></i>
+                    <h4 class="font-bold text-lg text-brown-dark mb-2">Kesetiaan</h4>
+                    <p class="text-gray-600">Setia dalam panggilan Kristus.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <div id="footer"></div>
+
+    <!-- ================= LOAD COMPONENT ================= -->
+    <script>
+        fetch('components/navbar.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+
+                // ===== SETUP HAMBURGER MENU AFTER NAVBAR LOADS =====
+                setupHamburgerMenu();
+            });
+
+        fetch('components/footer.html')
+            .then(res => res.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+
+        // ===== HAMBURGER MENU SETUP FUNCTION =====
+        function setupHamburgerMenu() {
+            const menuBtn = document.getElementById('menu-btn');
+            const menu = document.getElementById('menu');
+            const dropBtn = document.getElementById('drop-btn');
+            const dropMenu = document.getElementById('drop-menu');
+            const dropIcon = document.getElementById('drop-icon');
+
+            if (menuBtn && menu) {
+                menuBtn.onclick = () => {
+                    menu.classList.toggle('hidden');
+                    menuBtn.classList.toggle('active');
+                };
+            }
+
+            if (dropBtn && dropMenu) {
+                dropBtn.onclick = () => {
+                    dropMenu.classList.toggle('hidden');
+                    dropIcon.classList.toggle('rotate-180');
+                };
+            }
+        }
+
+        // ===== SCROLL TO HERO BUTTON =====
+        const scrollBtn = document.getElementById('btn-scroll-hero');
+        if (scrollBtn) {
+            scrollBtn.addEventListener('click', function() {
+                const heroSection = document.getElementById('hero-profil');
+                if (heroSection) {
+                    heroSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

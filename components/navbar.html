@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Gereja Oraet Laboara Malawa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* ===== WARNA ===== */
+        .bg-brown-milk {
+            background: linear-gradient(to right, #8B6F47, #A0826D, #B8956A);
+        }
+
+        .bg-brown-milk-dark {
+            background: linear-gradient(to bottom, #7D6444, #6B5639);
+        }
+
+        .bg-brown-hover {
+            background-color: #6B5639;
+        }
+
+        .bg-brown-light-hover {
+            background-color: #C9A876;
+        }
+
+        .text-brown-dark {
+            color: #5C4A33;
+        }
+
+        .text-brown-medium {
+            color: #8B6F47;
+        }
+
+        .border-brown {
+            border-color: #8B6F47;
+        }
+
+        /* ===== ANIMASI GARIS BAWAH NAVBAR ===== */
+        .nav-item {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 5px;
+            left: 50%;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .nav-item:hover::before {
+            width: 80%;
+        }
+
+        .nav-item.active::before {
+            width: 80%;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+        }
+
+        /* Dropdown button animasi */
+        .dropdown-btn {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-btn::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 5px;
+            left: 50%;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .dropdown-btn:hover::before {
+            width: 80%;
+        }
+
+        /* Dropdown items hover effect */
+        .dropdown-item {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dropdown-item::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: #8B6F47;
+            transition: width 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #C9A876;
+            color: white;
+            padding-left: 1.5rem;
+            border-left-color: #8B6F47;
+        }
+
+        .dropdown-item:hover::after {
+            width: 100%;
+        }
+
+        /* ===== HAMBURGER ANIMASI ===== */
+        .hamburger-line {
+            width: 28px;
+            height: 3px;
+            background-color: white;
+            display: block;
+            margin: 5px 0;
+            transition: all 0.3s ease-in-out;
+            border-radius: 2px;
+        }
+
+        .hamburger-btn {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger-btn:hover .hamburger-line {
+            background-color: #fcd34d;
+        }
+
+        .hamburger-btn.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger-btn.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-btn.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Mobile menu animasi border */
+        .mobile-menu-item {
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-item:hover {
+            border-left-color: #f59e0b;
+            background-color: #C9A876;
+        }
+
+        .mobile-menu-item.active {
+            border-left-color: #fbbf24;
+            background-color: #6B5639;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- NAVBAR -->
+    <nav class="bg-brown-milk shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+
+                <!-- LOGO + ANIMASI (TETAP ADA) -->
+                <div class="text-lg sm:text-xl font-bold text-white flex items-center gap-2 group flex-shrink-0">
+                    <div
+                        class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300 shadow-md">
+                        <span class="text-brown-dark text-xl">⛪</span>
+                    </div>
+                    <span class="hover:text-amber-200 transition-colors duration-300 hidden sm:inline">
+                        Gereja Oraet Laboara Malawa
+                    </span>
+                    <span class="hover:text-amber-200 transition-colors duration-300 sm:hidden">
+                        GOLM
+                    </span>
+                </div>
+
+                <!-- MENU DESKTOP -->
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-medium ml-8">
+
+                    <a href="index.html"
+                        class="nav-item active px-3 lg:px-4 py-2 text-white rounded-lg transition-all duration-300">
+                        Beranda
+                    </a>
+
+                    <a href="profil.html"
+                        class="nav-item px-3 lg:px-4 py-2 text-white rounded-lg transition-all duration-300">
+                        Profil
+                    </a>
+
+                    <!-- DROPDOWN PELAYANAN -->
+                    <div class="relative group">
+                        <button
+                            class="dropdown-btn flex items-center gap-1 px-3 lg:px-4 py-2 text-white rounded-lg transition-all duration-300">
+                            Pelayanan
+                            <svg class="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-300"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+
+                        <div
+                            class="absolute left-0 mt-2 w-52 bg-amber-50 shadow-2xl rounded-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border-2 border-brown">
+
+                            <a href="pelayanan.html#sekolah-minggu"
+                                class="dropdown-item block px-4 py-3 text-brown-medium font-medium border-l-4 border-transparent">
+                                Sekolah Minggu
+                            </a>
+
+                            <a href="pelayanan.html#remaja"
+                                class="dropdown-item block px-4 py-3 text-brown-medium font-medium border-l-4 border-transparent">
+                                Remaja
+                            </a>
+
+                            <a href="pelayanan.html#pemuda"
+                                class="dropdown-item block px-4 py-3 text-brown-medium font-medium border-l-4 border-transparent">
+                                Pemuda
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <a href="jadwal.html"
+                        class="nav-item px-3 lg:px-4 py-2 text-white rounded-lg transition-all duration-300">
+                        Jadwal
+                    </a>
+
+                    <a href="kontak.html"
+                        class="px-3 lg:px-4 py-2 bg-amber-500 text-white hover:bg-amber-600 hover:shadow-xl rounded-lg transition-all duration-300 transform hover:scale-110 font-semibold shadow-lg">
+                        Kontak
+                    </a>
+                </div>
+
+                <!-- MOBILE BUTTON -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="hamburger-btn transform hover:scale-110 transition-transform duration-300">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- MENU MOBILE -->
+        <div id="menu" class="hidden md:hidden bg-brown-milk-dark border-t border-brown">
+
+            <a href="index.html"
+                class="mobile-menu-item active block px-6 py-3 text-white">
+                Beranda
+            </a>
+
+            <a href="profil.html"
+                class="mobile-menu-item block px-6 py-3 text-white">
+                Profil
+            </a>
+
+            <button id="drop-btn"
+                class="mobile-menu-item w-full text-left px-6 py-3 text-white flex justify-between items-center">
+                <span>Pelayanan</span>
+                <svg id="drop-icon" class="w-5 h-5 transition-transform duration-300" fill="currentColor"
+                    viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+
+            <div id="drop-menu" class="hidden bg-brown-hover">
+                <a href="pelayanan.html#sekolah-minggu" class="block pl-10 py-3 text-amber-100 hover:bg-brown-light-hover transition-all duration-300">Sekolah Minggu</a>
+                <a href="pelayanan.html#remaja" class="block pl-10 py-3 text-amber-100 hover:bg-brown-light-hover transition-all duration-300">Remaja</a>
+                <a href="pelayanan.html#pemuda" class="block pl-10 py-3 text-amber-100 hover:bg-brown-light-hover transition-all duration-300">Pemuda</a>
+            </div>
+
+            <a href="jadwal.html" class="mobile-menu-item block px-6 py-3 text-white">Jadwal</a>
+
+            <a href="kontak.html"
+                class="block px-6 py-3 bg-amber-500 text-white font-semibold mx-4 my-2 rounded-lg text-center shadow-lg hover:bg-amber-600 transition-all duration-300">
+                Kontak
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        const dropBtn = document.getElementById('drop-btn');
+        const dropMenu = document.getElementById('drop-menu');
+        const dropIcon = document.getElementById('drop-icon');
+
+        menuBtn.onclick = () => {
+            menu.classList.toggle('hidden');
+            menuBtn.classList.toggle('active');
+        };
+
+        dropBtn.onclick = () => {
+            dropMenu.classList.toggle('hidden');
+            dropIcon.classList.toggle('rotate-180');
+        };
+    </script>
+
+</body>
+</html>

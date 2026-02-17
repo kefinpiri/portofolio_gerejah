@@ -1,0 +1,182 @@
+RESET
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* HERO SLIDER */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* IMAGE SLIDE */
+.hero-slider img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fade 18s infinite;
+}
+
+.hero-slider img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.hero-slider img:nth-child(2) {
+    animation-delay: 6s;
+}
+
+.hero-slider img:nth-child(3) {
+    animation-delay: 12s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* OVERLAY SANGAT HALUS */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0));
+    z-index: 2;
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+}
+
+/* TEXT */
+.hero-text {
+    max-width: 520px;
+    color: #fff;
+    animation: fadeZoom 1.2s ease forwards;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-text h1 span {
+    color: #fbbf24;
+}
+
+.hero-text p {
+    margin-top: 1rem;
+    line-height: 1.7;
+    color: #fef3c7;
+}
+
+.hero-text small {
+    display: block;
+    margin-top: .5rem;
+    font-style: italic;
+    opacity: .85;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.hero-text p {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+}
+
+.hero-text small {
+    font-family: 'Lora', serif;
+}
+
+/* BUTTON */
+.hero-btn {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: #fbbf24;
+    color: #3d2f1f;
+    padding: .7rem 1.4rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn-primary:hover {
+    background: #f59e0b;
+}
+
+.btn-outline {
+    border: 1px solid rgba(255, 255, 255, .6);
+    padding: .7rem 1.4rem;
+    border-radius: 6px;
+    transition: .3s;
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, .15);
+}
+
+/* ANIMASI */
+@keyframes fadeZoom {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-content {
+        justify-content: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+}
